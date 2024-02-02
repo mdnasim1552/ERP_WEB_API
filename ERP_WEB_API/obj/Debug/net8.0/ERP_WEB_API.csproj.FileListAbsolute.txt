@@ -37,3 +37,4 @@ F:\Angular\ERPAPI\ERP_WEB_API\ERP_WEB_API\obj\Debug\net8.0\refint\ERP_WEB_API.dl
 F:\Angular\ERPAPI\ERP_WEB_API\ERP_WEB_API\obj\Debug\net8.0\ERP_WEB_API.pdb
 F:\Angular\ERPAPI\ERP_WEB_API\ERP_WEB_API\obj\Debug\net8.0\ERP_WEB_API.genruntimeconfig.cache
 F:\Angular\ERPAPI\ERP_WEB_API\ERP_WEB_API\obj\Debug\net8.0\ref\ERP_WEB_API.dll
+F:\Angular\ERPAPI\ERP_WEB_API\ERP_WEB_API\obj\Debug\net8.0\ERP_WEB_API.sourcelink.json

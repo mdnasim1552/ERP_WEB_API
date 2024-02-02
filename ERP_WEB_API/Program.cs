@@ -1,6 +1,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using ERP_WEB_API.DataAccess;
+using PTLRealERP.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddScoped<IDbConnection>(sp =>
 });
 //builder.Services.AddScoped<ProcessAccess>();
 builder.Services.AddScoped<IProcessAccess, ProcessAccess>();
+builder.Services.AddAllRepository();//Register all repository by DependencyInjection
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
