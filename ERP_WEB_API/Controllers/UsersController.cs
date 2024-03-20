@@ -38,7 +38,7 @@ namespace ERP_WEB_API.Controllers
             }
         }
         [HttpPost("insertData")]
-        public async Task<IActionResult> InsertUserData([FromBody] List<Userinf> userList)
+        public async Task<IActionResult> InsertUserData([FromBody] List<Userinfs> userList)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace ERP_WEB_API.Controllers
         }
 
         [HttpPost("updateData")]
-        public async Task<IActionResult> UpdateUserData([FromBody] List<Userinf> updatedData)
+        public async Task<IActionResult> UpdateUserData([FromBody] List<Userinfs> updatedData)
         {
             try
             {
