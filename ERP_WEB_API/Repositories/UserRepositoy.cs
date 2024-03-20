@@ -15,7 +15,7 @@ namespace ERP_WEB_API.Repositories
         {
             _processAccess = processAccess;
         }
-        public async Task<List<Userinf>> GetUserList()
+        public async Task<List<Userinfs>> GetUserList()
         {
             string procedureName = "SP_UTILITY_LOGIN_MGT";
             string Calltype = "SHOWUSER";
@@ -23,11 +23,11 @@ namespace ERP_WEB_API.Repositories
             {
                     new SqlParameter("@CallType", Calltype)
             };
-            var userList = await _processAccess.GetAllAsync<Userinf>(procedureName, parameters);
+            var userList = await _processAccess.GetAllAsync<Userinfs>(procedureName, parameters);
             return userList;
         }
 
-        public async Task<bool> InsertUserData(List<Userinf> userList)
+        public async Task<bool> InsertUserData(List<Userinfs> userList)
         {
             string procedureName = "SP_UTILITY_LOGIN_MGT";
             string Calltype = "INSERTUSER";
@@ -56,7 +56,7 @@ namespace ERP_WEB_API.Repositories
             return true;
         }
 
-        public async Task<bool> UpdateUserData(List<Userinf> updatedData)
+        public async Task<bool> UpdateUserData(List<Userinfs> updatedData)
         {
             string procedureName = "SP_UTILITY_LOGIN_MGT";
             string Calltype = "UPDATEUSER";

@@ -2,6 +2,7 @@ using System.Data.SqlClient;
 using System.Data;
 using ERP_WEB_API.DataAccess;
 using PTLRealERP.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,10 @@ builder.Services.AddScoped<IDbConnection>(sp =>
     var connectionString = configuration.GetConnectionString("DefaultConnection");
     return new SqlConnection(connectionString);
 });
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
+));
+
 //builder.Services.AddScoped<ProcessAccess>();
 builder.Services.AddScoped<IProcessAccess, ProcessAccess>();
 builder.Services.AddAllRepository();//Register all repository by DependencyInjection
