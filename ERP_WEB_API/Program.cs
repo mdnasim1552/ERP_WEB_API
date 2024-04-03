@@ -3,6 +3,8 @@ using System.Data;
 using ERP_WEB_API.DataAccess;
 using PTLRealERP.Configuration;
 using Microsoft.EntityFrameworkCore;
+using ERP_WEB_API.Data;
+using ERP_WEB_API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //builder.Services.AddScoped<ProcessAccess>();
 builder.Services.AddScoped<IProcessAccess, ProcessAccess>();
 builder.Services.AddAllRepository();//Register all repository by DependencyInjection
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
